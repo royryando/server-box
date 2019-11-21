@@ -67,9 +67,10 @@ namespace ServerBox
                 switch (selectedServer.Type)
                 {
                     case "SSH":
-                        command = String.Format(" /K ssh {0}@{1}{2}",
+                        command = String.Format(" /K ssh {0}@{1} -p {2}",
                             selectedServer.Username,
-                            selectedServer.Ip, "");
+                            selectedServer.Ip,
+                            selectedServer.Port);
                         Console.WriteLine("Command : " + command);
                         if (usePassword)
                         {
