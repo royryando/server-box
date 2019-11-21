@@ -48,7 +48,7 @@ disable menu anims:i:1
 disable themes:i:0
 disable cursor setting:i:0
 bitmapcachepersistenable:i:1
-full address:s:{0}
+full address:s:{0}:{1}
 audiomode:i:0
 redirectprinters:i:1
 redirectcomports:i:0
@@ -72,8 +72,8 @@ use redirection server name:i:0
 rdgiskdcproxy:i:0
 kdcproxyname:s:
 drivestoredirect:s:*
-username:s:{1}
-", server.Ip, server.Username);
+username:s:{2}
+", server.Ip, server.Port, server.Username);
             string path = String.Format(@"{0}\tempconnection.rdp", DatabaseHelper.ENV_DIRECTORY);
             if (File.Exists(path)) File.Delete(path);
             File.WriteAllText(path, content);
